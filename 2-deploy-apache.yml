@@ -1,13 +1,4 @@
-################################################################################
-##                                                                            ##
-##  Ansible Tower Playbook                                                    ##
-##  Name:        Deploy-Apache.yml                                            ##
-##  Created by:  Matthew Kimler and Robert Nelson                             ##
-##  Website:     www.iarchive.com                                             ##
-##                                                                            ##
-################################################################################
 
----
 - name: This sets up an httpd webserver
   hosts: ec2
   become: yes
