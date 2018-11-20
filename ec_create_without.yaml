@@ -1,0 +1,36 @@
+﻿---
+# Basic provisioning example
+- name: Create AWS resources
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+
+  tasks:
+  - name: Create an EC2 instance
+    ec2:
+      aws_access_key: "{{ aws_access_key }}"
+      aws_secret_key: "{{ aws_secret_key }}" 
+      key_name: occm
+      region: ap-northeast-2a
+      group_id: sg-8cf192e4
+      instance_type: t2.micro
+      vpc_subnet_id: subnet-4466712d
+      image: ami-3eee4150
+      assign_public_ip: yes
+      wait: yes
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: gp2
+          volume_size: 10
+          delete_on_termination: true
+      exact_count: 1
+      count_tag:
+         Env: Demo 
+      instance_tags:
+         Name: ansible
+         Project: EC2-Demo
+         Env: Demo
+    register: ec2
