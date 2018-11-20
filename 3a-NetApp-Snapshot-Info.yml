@@ -1,0 +1,18 @@
+################################################################################
+##                                                                            ##
+##  Ansible Tower Playbook                                                    ##
+##  Name:        Netapp-Snapshot-Info.yml                                     ##
+##  Created by:  Matthew Kimler and Robert Nelson                             ##
+##  Website:     www.iarchive.com                                             ##
+##                                                                            ##
+################################################################################
+
+---
+ - hosts: netapp
+   gather_facts: no
+   tasks:
+     - name: Get NetApp Snapshot Info
+       raw: volume snapshot show -vserver svm_RHSAnsible -volume RHSAnsible_copy | grep daily.*
+       register: ontap_snap_info
+     - debug: var=ontap_snap_info
+     
