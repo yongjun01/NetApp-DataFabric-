@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars:
+    hostname: "{{ hostname }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
+    dest_hostname: "{{ dest_hostname }}"
+    vserver:  "{{ vserver }}"
+    peer_vserver: "{{ peer_vserver }}"
+    peer_cluster: "{{ peer_cluster }}"
+  name: svm peering
+  tasks:
+  - name: Source vserver peer create
+    na_ontap_vserver_peer:
+      state: present
+      peer_vserver: "{{ peer_vserver }}"
+      peer_cluster: "{{ peer_cluster }}"
+      vserver: "{{ vserver }}"
+      applications: snapmirror
+      hostname: "{{ hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      dest_hostname: "{{ dest_hostname }}"

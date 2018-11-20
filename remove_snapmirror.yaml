@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  gather_facts: false 
+  vars:
+    hostname: "{{ hostname }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
+    source_vserver:  "{{ source_vserver }}"
+    destination_vserver: "{{ destination_vserver }}"
+    source_volume: "{{ source_volume }}"
+    destination_volume: "{{ destination_volume }}"
+  name: ontap snapmirror 
+  tasks: 
+  - name: Remove SnapMirror
+    na_ontap_snapmirror: 
+      state: absent 
+      source_vserver:  "{{ source_vserver }}"
+      destination_vserver: "{{ destination_vserver }}"
+      source_hostname: 49.254.105.140 
+      destination_path: svm_CVO:yj_ansible
+      source_volume: "{{ source_volume }}"
+      destination_volume: "{{ destination_volume }}"
+      hostname: "{{ hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"

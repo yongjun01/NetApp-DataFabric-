@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  gather_facts: false
+  vars:
+    hostname: "{{ hostname }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
+    dest_hostname: "{{ dest_hostname }}"
+    source_intercluster_lif: "{{ source_intercluster_lif }}"
+    dest_intercluster_lif: "{{ dest_intercluster_lif }}"
+  name: cluster peering
+  tasks:
+  - name: Create cluster peer
+    na_ontap_cluster_peer:
+      state: present
+      source_intercluster_lif: "{{ source_intercluster_lif }}"
+      dest_intercluster_lif: "{{ dest_intercluster_lif }}"
+      passphrase: XXXX
+      hostname: "{{ hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      dest_hostname: "{{ dest_hostname }}"
