@@ -11,8 +11,8 @@
   tasks:
   - name: Create an EC2 instance
     ec2:
-#      aws_access_key: "{{ aws_access_key }}"
-#      aws_secret_key: "{{ aws_secret_key }}" 
+      aws_access_key: "{{ aws_access_key }}"
+      aws_secret_key: "{{ aws_secret_key }}" 
       key_name: occm
       region: ap-northeast-2a
       group_id: sg-8cf192e4
