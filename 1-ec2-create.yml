@@ -38,4 +38,4 @@
          Name: ansible-aws-tower
          Project: RHS-Demo
          Env: Demo
-    register: ec2
+    register: ec2-1
