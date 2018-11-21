@@ -2,7 +2,7 @@
 - name: Create AWS resources
   hosts: localhost
   connection: local
-  gather_facts: False
+  gather_facts: false
   tasks:
   - name: Create an EC2 instance
     ec2:
