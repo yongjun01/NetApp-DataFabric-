@@ -1,0 +1,18 @@
+﻿---
+- name: Create AWS resources
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+  - name: Create an EC2 instance
+    ec2:
+      key_name: occm
+      region: ap-northeast-2a
+      group_id: sg-8cf192e4
+      instance_type: t2.micro
+      vpc_subnet_id: subnet-4466712d
+      count: 1
+      image: ami-3eee4150
+      assign_public_ip: yes
+      wait: yes
+    register: ec2-1
