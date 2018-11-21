@@ -22,8 +22,6 @@
           volume_size: 10
           delete_on_termination: true
       count: 1
-      count_tag:
-         Env: Demo 
       instance_tags:
          Name: ansible-node
          Project: Data Fabric 
