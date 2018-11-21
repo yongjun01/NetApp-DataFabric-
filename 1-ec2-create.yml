@@ -1,14 +1,4 @@
-################################################################################
-##                                                                            ##
-##  Ansible Tower Playbook                                                    ##
-##  Name:        EC2-Create.yml                                               ##
-##  Created by:  Matthew Kimler and Robert Nelson                             ##
-##  Website:     www.iarchive.com                                             ##
-##                                                                            ##
-################################################################################
-
 ---
-# Basic provisioning example
 - name: Create AWS resources
   hosts: localhost
   connection: local
@@ -31,11 +21,11 @@
           volume_type: gp2
           volume_size: 10
           delete_on_termination: true
-      exact_count: 1
+      count: 1
       count_tag:
          Env: Demo 
       instance_tags:
-         Name: ansible-aws-tower
-         Project: RHS-Demo
+         Name: ansible-node
+         Project: Data Fabric 
          Env: Demo
     register: ec2-1
