@@ -31,7 +31,7 @@
           volume_type: gp2
           volume_size: 10
           delete_on_termination: true
-      exact_count: "{{ec2_quantity}}"
+      exact_count: 1
       count_tag:
          Env: Demo 
       instance_tags:
