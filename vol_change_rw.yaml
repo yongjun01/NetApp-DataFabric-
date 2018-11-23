@@ -6,6 +6,7 @@
   tasks:
   - name: Change RW
     na_ontap_volume:
+      state: present 
       name: "{{ vol_name }}"
       vserver: "{{ vserver }}"
       policy: default 
