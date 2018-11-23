@@ -14,7 +14,7 @@
       count: 1
       image: ami-011b3ccf1bd6db744
       assign_public_ip: yes
-      ansible_host: apach  
+      ansible_host: apache  
       wait: yes
       instance_tags:
         Name: Test
