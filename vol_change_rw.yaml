@@ -10,7 +10,12 @@
       vserver: "{{ vserver }}"
       policy: default 
       type: RW 
-      junction_path: /yj_ansi01_copy
       hostname: "{{ hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
+
+- hosts: netapp
+  gather_facts: no
+  tasks:
+    - name: Set Junction Path
+      raw: volume mount -vserver svm_CVO -volume yj_ansi01_copy -junction-path /yj_ansi01_copy
