@@ -9,7 +9,6 @@
       state: present 
       name: "{{ vol_name }}"
       vserver: "{{ vserver }}"
-      policy: default 
       type: RW 
       hostname: "{{ hostname }}"
       username: "{{ username }}"
