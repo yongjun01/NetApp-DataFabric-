@@ -1,4 +1,4 @@
-﻿---
+---
 - name: ontap
   hosts: localhost 
   gather_facts: no
@@ -10,9 +10,22 @@
     vserver:  "{{ vserver }}"
     parent_volume: "{{ parent_volume }}"
     vol_name: "{{ vol_name }}"
+    snapshot: "{{ snapshot_name }}"
 
   tasks:
-  - name: create volume clone
+  - name: create SnapShot
+    tags:
+    - create
+      na_ontap_snapshot:
+      state: present
+      snapshot: "{{ snapshot name }}"
+      volume: "{{ vol_name }}"
+      comment: "i am a comment"
+      vserver: "{{ vserver name }}"
+      username: "{{ netapp username }}"
+      password: "{{ netapp password }}"
+      hostname: "{{ netapp hostname }}" 
+    - name: create volume clone
     na_ontap_volume_clone:
       state: present
       username: "{{ username }}"
@@ -21,4 +34,4 @@
       vserver: "{{ vserver }}"
       parent_volume: "{{ parent_volume }}"
       volume: "{{ vol_name }}"
-     
+      parent_snapshot: "{{ snapshot_name }}"    
