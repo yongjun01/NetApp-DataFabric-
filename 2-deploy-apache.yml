@@ -1,6 +1,6 @@
 ---
 - name: This sets up an httpd webserver
-  hosts: EC2-2
+  hosts: apache
   become: yes
   tasks:
   - name: Install the httpd rpm
