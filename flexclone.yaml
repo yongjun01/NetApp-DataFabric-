@@ -19,7 +19,7 @@
       na_ontap_snapshot:
       state: present
       snapshot: "{{ snapshot name }}"
-      volume: "{{ vol_name }}"
+      volume: "{{ parent_volume }}"
       comment: "i am a comment"
       vserver: "{{ vserver name }}"
       username: "{{ netapp username }}"
@@ -34,4 +34,4 @@
       vserver: "{{ vserver }}"
       parent_volume: "{{ parent_volume }}"
       volume: "{{ vol_name }}"
-      parent_snapshot: "{{ snapshot_name }}"    
+      parent_snapshot: "{{ snapshot_name }}"   
