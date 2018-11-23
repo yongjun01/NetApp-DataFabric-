@@ -17,4 +17,4 @@
       wait: yes
       instance_tags:
         Name: Test
-    register: EC2 Group
+    register: ec2
