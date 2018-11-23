@@ -9,8 +9,9 @@
       state: present
       name: "{{ vol_name }}"
       vserver: "{{ vserver }}"
+      policy: default 
       type: RW 
-      junction_path: /"{{ vol_name }}"
+      junction_path: /yj_ansi01_copy
       hostname: "{{ hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
