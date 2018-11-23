@@ -1,0 +1,24 @@
+﻿---
+- name: ontap
+  hosts: localhost 
+  gather_facts: no
+  connection: local
+  vars:
+    hostname: "{{ hostname }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
+    vserver:  "{{ vserver }}"
+    parent_volume: "{{ parent_volume }}"
+    vol_name: "{{ vol_name }}"
+
+  tasks:
+  - name: create volume clone
+    na_ontap_volume_clone:
+      state: present
+      username: "{{ username }}"
+      password: "{{ password }}"
+      hostname: "{{ hostname }}"
+      vserver: "{{ vserver }}"
+      parent_volume: "{{ parent_volume }}"
+      volume: "{{ vol_name }}"
+     
