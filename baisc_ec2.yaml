@@ -1,4 +1,4 @@
-﻿---
+---
 - name: Create AWS resources
   hosts: localhost
   connection: local
@@ -6,13 +6,15 @@
   tasks:
   - name: Create an EC2 instance
     ec2:
-      key_name: occm
-      region: ap-northeast-2a
-      group_id: sg-8cf192e4
+      key_name: test
+      region: us-east-1
+      group_id: sg-b4989dca
       instance_type: t2.micro
-      vpc_subnet_id: subnet-4466712d
+      vpc_subnet_id: subnet-36bb8353
       count: 1
-      image: ami-3eee4150
+      image: ami-011b3ccf1bd6db744
       assign_public_ip: yes
       wait: yes
-    register: ec2-1
+      instance_tags:
+        Name: Test
+    register: EC2 group
