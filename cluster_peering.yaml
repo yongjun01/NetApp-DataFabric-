@@ -21,6 +21,8 @@
       hostname: "{{ hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
+      dest_username: admin 
+      dest_password: Netapp123
       source_cluster_name: "{{ source_cluster_name }}" 
       dest_cluster_name: "{{ dest_cluster_name }}"
       dest_hostname: "{{ dest_hostname }}"
