@@ -6,6 +6,7 @@
     username: "{{ username }}"
     password: "{{ password }}"
     dest_hostname: "{{ dest_hostname }}"
+    source_cluster_name: "{{ source_cluster_name }}"
     source_intercluster_lif: "{{ source_intercluster_lif }}"
     dest_intercluster_lif: "{{ dest_intercluster_lif }}"
   name: cluster peering
@@ -19,4 +20,5 @@
       hostname: "{{ hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
+      source_cluster_name: "{{ source_cluster_name }}" 
       dest_hostname: "{{ dest_hostname }}"
