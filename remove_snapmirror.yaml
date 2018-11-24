@@ -9,7 +9,7 @@
       source_vserver: "{{ source_vserver }}"
       destination_vserver: "{{ destination_vserver }}"
       source_hostname: "{{ source_hostname }}"
-      destination_path: svm_CVO:yj_ansi01_copy
+      destination_path: svm_CVO:ansible_target
       source_volume: "{{ source_volume }}"
       destination_volume: "{{ destination_volume }}"
       hostname: "{{ hostname }}"
