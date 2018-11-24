@@ -8,7 +8,6 @@
       state: absent 
       source_hostname: "{{ source_hostname }}"
       destination_path: svm_CVO:ansible_target
-      source_path: yj_ansible:yj_ansi04    
       source_password: "{{ source_password }}"
       source_username: "{{ source_username }}"
       hostname: "{{ hostname }}"
