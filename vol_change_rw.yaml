@@ -14,7 +14,7 @@
       username: "{{ username }}"
       password: "{{ password }}"
 
-- hosts: ontap
+- hosts: 54.82.76.199
   gather_facts: no
   tasks:
     - name: Set Junction Path
