@@ -15,7 +15,7 @@
       state: present
       source_intercluster_lif: "{{ source_intercluster_lif }}"
       dest_intercluster_lif: "{{ dest_intercluster_lif }}"
-      passphrase: XXXX
+      passphrase: netapp123
       hostname: "{{ hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
