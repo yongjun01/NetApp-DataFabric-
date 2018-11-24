@@ -17,4 +17,6 @@
       wait: yes
       instance_tags:
         Name: Test
+        Project: Data Fabric 
+        Env: Demo
     register: ec2
