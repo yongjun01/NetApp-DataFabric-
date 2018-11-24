@@ -14,7 +14,7 @@
       username: "{{ username }}"
       password: "{{ password }}"
 
-- hosts: netapp
+- hosts: ontap
   gather_facts: no
   tasks:
     - name: Set Junction Path
