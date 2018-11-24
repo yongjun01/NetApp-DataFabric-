@@ -6,8 +6,6 @@
   - name: Remove SnapMirror
     na_ontap_snapmirror: 
       state: absent 
-      source_vserver: "{{ source_vserver }}"
-      destination_vserver: "{{ destination_vserver }}"
       source_hostname: "{{ source_hostname }}"
       destination_path: svm_CVO:ansible_target
       source_path: yj_ansible:yj_ansi04    
