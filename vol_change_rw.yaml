@@ -10,6 +10,7 @@
       name: "{{ vol_name }}"
       vserver: "{{ vserver }}"
       type: RW 
+      policy: default 
       hostname: "{{ hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
