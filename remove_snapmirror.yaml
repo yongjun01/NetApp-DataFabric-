@@ -13,6 +13,8 @@
       source_path: yj_ansible:yj_ansi04
       source_volume: "{{ source_volume }}"
       destination_volume: "{{ destination_volume }}"
+      source_password: "{{ source_password }}"
+      source_username: "{{ source_username }}"
       hostname: "{{ hostname }}"
       username: "{{ username }}"
       password: "{{ password }}"
