@@ -5,7 +5,7 @@
  
   tasks:
   # get date
-  - set_fact: creationdate="{{lookup('pipe','date "+%Y/%m/%d %H:%M"')}}"
+#  - set_fact: creationdate="{{lookup('pipe','date "+%Y/%m/%d %H:%M"')}}"
   # Create a VM from a template
   - name: create the VM
     vmware_guest:
@@ -19,7 +19,7 @@
       name: '{{ inventory_hostname }}'
       state: poweredon
       guest_id: '{{ guest_id }}'
-      annotation: "{{ notes }} - {{ creationdate }}"
+#      annotation: "{{ notes }} - {{ creationdate }}"
       disk:
       - size_gb: 40
         type: thin
@@ -38,8 +38,8 @@
       customization:
         dns_servers:
         - 8.8.8.8
-        - 168.126.63.1
-#        domain : zwindler.fr
+        - 168.126.63.1 
+        domain : vsphere.local
         hostname: '{{ inventory_hostname }}'
       template: '{{  guest_template  }}'
       wait_for_ip_address: yes
