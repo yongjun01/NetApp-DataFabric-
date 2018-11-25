@@ -33,8 +33,8 @@
         - 8.8.8.8
         - 168.126.63.1
       hardware:
-        memory_mb: 4096
-        num_cpus: 4
+        memory_mb: '{{ guest_memory }}'
+        num_cpus: '{{ guest_vcpu }}'
       customization:
         dns_servers:
         - 8.8.8.8
@@ -43,10 +43,10 @@
         hostname: '{{ inventory_hostname }}'
       template: '{{  guest_template  }}'
       wait_for_ip_address: yes  
-#  - name: add to ansible hosts file
-#    lineinfile:
-#      dest: /etc/ansible/hosts
-#      insertafter: '^\[{{ ansible_host_group }}\]'
-#      line: '{{ item }}'
-#    with_items: '{{play_hosts}}'
-#    run_once: true
+   - name: add to ansible hosts file
+     lineinfile:
+       dest: /etc/ansible/hosts
+       insertafter: '^\[{{ ansible_host_group }}\]'
+       line: '{{ item }}'
+     with_items: '{{play_hosts}}'
+     run_once: true
