@@ -6,17 +6,17 @@
   tasks:
   - name: Create an EC2 instance
     ec2:
-      key_name: Data Fabric 
+      key_name: test 
       region: us-east-1
       group_id: sg-b4989dca
       instance_type: t2.micro
       vpc_subnet_id: subnet-36bb8353
       count: 1
-      image: ami-011b3ccf1bd6db744
+      image: ami-0199893068f89a449
       assign_public_ip: yes
       wait: yes
       instance_tags:
-        Name: Test
+        Name: Centos 
         Project: Data Fabric 
-        Env: Demo 
+        Env: Centos  
     register: ec2
