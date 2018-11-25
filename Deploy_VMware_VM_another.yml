@@ -42,8 +42,7 @@
         domain : vsphere.local
         hostname: '{{ inventory_hostname }}'
       template: '{{  guest_template  }}'
-      wait_for_ip_address: yes
-   register: newvm   
+      wait_for_ip_address: yes  
 #  - name: add to ansible hosts file
 #    lineinfile:
 #      dest: /etc/ansible/hosts
