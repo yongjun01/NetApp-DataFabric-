@@ -1,4 +1,8 @@
 ---
+- hosts: all
+  gather_facts: false
+  connection: local
+
 # get date
 - set_fact: creationdate="{{lookup('pipe','date "+%Y/%m/%d %H:%M"')}}"
 
@@ -17,7 +21,7 @@
     guest_id: '{{ guest_id }}'
     annotation: "{{ notes }} - {{ creationdate }}"
     disk:
-    - size_gb: 150
+    - size_gb: 40
       type: thin
       datastore: '{{ vsphere_datastore }}'
     networks:
@@ -33,7 +37,7 @@
     customization:
       dns_servers:
       - '{{ guest_dns_server }}'
-      domain : '{{ guest_domain_name }}'
+#        domain : '{{ guest_domain_name }}'
       hostname: '{{ inventory_hostname }}'
     template: '{{ guest_template }}'
     wait_for_ip_address: yes
@@ -56,10 +60,8 @@
   when: "hostvars[item].inventory_hostname == inventory_hostname"
   delegate_to: localhost
 
-- name: accept new ssh fingerprints
-  shell: ssh-keyscan {{ guest_custom_ip }},{{inventory_hostname}} >> ~/.ssh/known_hosts
-  with_items: '{{play_hosts}}'
-  when: "hostvars[item].inventory_hostname == inventory_hostname"
-  delegate_to: localhost
-
-- setup:
+#- name: accept new ssh fingerprints
+#  shell: ssh-keyscan {{ guest_custom_ip }},{{inventory_hostname}} >> ~/.ssh/known_hosts
+#  with_items: '{{play_hosts}}'
+#  when: "hostvars[item].inventory_hostname == inventory_hostname"
+#  delegate_to: localhost
