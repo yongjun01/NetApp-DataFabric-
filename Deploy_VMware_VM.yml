@@ -3,8 +3,9 @@
   gather_facts: false
   connection: local
 
+Tasks:
 # get date
-# - set_fact: creationdate="{{lookup('pipe','date "+%Y/%m/%d %H:%M"')}}"
+- set_fact: creationdate="{{lookup('pipe','date "+%Y/%m/%d %H:%M"')}}"
 
 # Create a VM from a template
 - name: create the VM
@@ -19,7 +20,7 @@
     name: '{{ inventory_hostname }}'
     state: poweredon
     guest_id: '{{ guest_id }}'
-#   annotation: "{{ notes }} - {{ creationdate }}"
+    annotation: "{{ notes }} - {{ creationdate }}"
     disk:
     - size_gb: 40
       type: thin
