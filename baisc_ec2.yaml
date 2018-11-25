@@ -6,7 +6,7 @@
   tasks:
   - name: Create an EC2 instance
     ec2:
-      key_name: DR
+      key_name: Data Fabric 
       region: us-east-1
       group_id: sg-b4989dca
       instance_type: t2.micro
@@ -18,5 +18,5 @@
       instance_tags:
         Name: Test
         Project: Data Fabric 
-        Env: Centos 
+        Env: Demo 
     register: ec2
