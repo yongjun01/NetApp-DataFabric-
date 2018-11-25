@@ -1,5 +1,5 @@
 ﻿---
-- hosts: all
+- hosts: local 
   gather_facts: false
   connection: local
  
