@@ -36,7 +36,8 @@
       num_cpus: '{{ guest_vcpu }}'
     customization:
       dns_servers:
-      - '{{ guest_dns_server }}'
+      - 8.8.8.8
+      - 168.126.63.1
 #        domain : '{{ guest_domain_name }}'
       hostname: '{{ inventory_hostname }}'
     template: '{{ guest_template }}'
