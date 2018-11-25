@@ -30,19 +30,18 @@
       netmask: '{{ guest_netmask }}'
       gateway: '{{ guest_gateway }}'
       dns_servers:
-      - '{{ guest_dns_server }}'
+      - 8.8.8.8
     hardware:
       memory_mb: '{{ guest_memory }}'
       num_cpus: '{{ guest_vcpu }}'
     customization:
       dns_servers:
-      - 8.8.8.8
       - 168.126.63.1
 #        domain : '{{ guest_domain_name }}'
       hostname: '{{ inventory_hostname }}'
     template: '{{ guest_template }}'
     wait_for_ip_address: yes
-  delegate_to: localhost
+#  delegate_to: localhost
 
 - name: add to ansible hosts file
   lineinfile:
@@ -51,7 +50,7 @@
     line: '{{ item }}'
   with_items: '{{play_hosts}}'
   run_once: true
-  delegate_to: localhost
+#  delegate_to: localhost
 
 #- name: add to /etc/hosts file
 #  lineinfile:
