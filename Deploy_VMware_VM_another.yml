@@ -15,7 +15,7 @@
       validate_certs: no
       esxi_hostname: '{{ esxi_hostname }}' 
       datacenter: '{{ vsphere_datacenter }}'
-      folder: {{ vsphere_folder  }}'
+      folder: '{{ vsphere_folder  }}'
       name: '{{ inventory_hostname }}'
       state: poweredon
       guest_id: '{{ guest_id }}'
