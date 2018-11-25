@@ -12,7 +12,7 @@
       instance_type: t2.micro
       vpc_subnet_id: subnet-36bb8353
       count: 1
-      image: ami-0199893068f89a449
+      image: ami-01d5b8c6e4958a724
       assign_public_ip: yes
       wait: yes
       instance_tags:
