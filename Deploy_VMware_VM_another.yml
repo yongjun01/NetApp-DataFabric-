@@ -12,7 +12,7 @@
       hostname: '{{ vsphere_host }}'
       username: '{{ vsphere_user }}'
       password: '{{ vsphere_password }}'
-      validate_certs: no
+      validate_certs: false
       esxi_hostname: '{{ esxi_hostname }}' 
       datacenter: '{{ vsphere_datacenter }}'
       folder: '{{ vsphere_folder  }}'
